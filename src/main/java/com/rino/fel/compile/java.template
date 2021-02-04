@@ -1,0 +1,13 @@
+package com.rino.fel.compile;
+
+import com.rino.fel.common.*;
+import com.rino.fel.Expression;
+import com.rino.fel.context.*;
+
+public class ${classname}  implements Expression{
+    ${attrs}
+    public Object eval(FelContext context) {
+        ${localVars}
+        return ${expression};
+    }
+}
