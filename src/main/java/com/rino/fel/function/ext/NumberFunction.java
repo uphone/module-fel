@@ -1,4 +1,6 @@
-package com.rino.fel.function;
+package com.rino.fel.function.ext;
+
+import com.rino.fel.function.CommonFunction;
 
 import java.math.BigDecimal;
 

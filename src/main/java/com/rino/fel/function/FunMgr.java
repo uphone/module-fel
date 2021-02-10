@@ -6,6 +6,8 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.rino.fel.function.ext.JsonFunction;
+import com.rino.fel.function.ext.NumberFunction;
 import com.rino.fel.function.operator.Add;
 import com.rino.fel.function.operator.And;
 import com.rino.fel.function.operator.CollectionGet;
@@ -94,27 +96,10 @@ public class FunMgr {
 //		funcMap.put(Like.getInstance().getName(), Like.getInstance());// like
 //		funcMap.put(In.getInstance().getName(), In.getInstance());// in
 
-		
-		
+		// 自定义扩展函数
+		addFun(new NumberFunction());
+		addFun(new JsonFunction());
 
-	}
-
-	public void autoLoad() {
-		Enumeration<URL> res;
-		try {
-			res = this.getClass().getClassLoader().getResources("com/rino/fel/function/");
-			while (res.hasMoreElements()) {
-				URL nex = res.nextElement();
-				System.out.println(nex.getFile());
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public static void main(String[] args) {
-		new FunMgr().autoLoad();
 	}
 
 	private void addFun(Function fun) {
